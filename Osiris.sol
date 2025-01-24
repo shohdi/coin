@@ -597,9 +597,9 @@ contract BEP20Token is Context, IBEP20, Ownable {
      uint256 burner = tax;
      //uint256 burner = tax/2;
      //uint256 dist = tax/2;
+     uint256 amount1 = amount + burner;
      
-     
-    _balances[sender] = _balances[sender].sub(amount, "BEP20: transfer amount exceeds balance");
+    _balances[sender] = _balances[sender].sub(amount1, "BEP20: transfer amount exceeds balance");
     _balances[recipient] = _balances[recipient].add(amount);
    
     
@@ -607,7 +607,9 @@ contract BEP20Token is Context, IBEP20, Ownable {
     emit Transfer(sender, recipient, amount);
     //_holders[_totalHolders] = recipient;
     //_totalHolders++;
-     _burn(recipient,burner);
+    //burn burner amount (0.1%)
+    _totalSupply = _totalSupply.sub(burner);
+    emit Transfer(sender, address(0), burner);
     
     //_distribute(recipient,dist);
   }
