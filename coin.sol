@@ -513,6 +513,7 @@ contract BEP20Token is Context, IBEP20, Ownable {
     return true;
   }
 
+/*
   /**
    * @dev Creates `amount` tokens and assigns them to `msg.sender`, increasing
    * the total supply.
@@ -520,11 +521,13 @@ contract BEP20Token is Context, IBEP20, Ownable {
    * Requirements
    *
    * - `msg.sender` must be the token owner
-   */
+   *
   function mint(uint256 amount) public onlyOwner returns (bool) {
-    //_mint(_msgSender(), amount);
+    _mint(_msgSender(), amount);
     return true;
   }
+
+  */
   
   
   /**
