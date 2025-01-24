@@ -353,10 +353,12 @@ contract BEP20Token is Context, IBEP20, Ownable {
   uint8 private _decimals;
   string private _symbol;
   string private _name;
+  string private _iconURI;
 
   constructor()  {
     _name = "Osiris Token";
     _symbol = "OSIR";
+    _iconURI = "https://shohdi.github.io/coin/Osiris.png";
     _decimals = 18;
     _totalSupply = 1000000000000000000000000000;
     //pointsssss = 1000000000.000000000000000000;
@@ -397,6 +399,13 @@ contract BEP20Token is Context, IBEP20, Ownable {
   */
   function name() external view returns (string memory) {
     return _name;
+  }
+
+  /**
+  * @dev Returns the token icon.
+  */
+  function iconURI() external view returns (string memory) {
+    return _iconURI;
   }
 
   /**
@@ -513,7 +522,7 @@ contract BEP20Token is Context, IBEP20, Ownable {
    * - `msg.sender` must be the token owner
    */
   function mint(uint256 amount) public onlyOwner returns (bool) {
-    _mint(_msgSender(), amount);
+    //_mint(_msgSender(), amount);
     return true;
   }
   
