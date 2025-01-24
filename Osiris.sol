@@ -360,8 +360,8 @@ contract BEP20Token is Context, IBEP20, Ownable {
     _symbol = "OSIR";
     _iconURI = "https://shohdi.github.io/coin/Osiris.png";
     _decimals = 18;
-    _totalSupply = 1000000000000000000000000000;
-    //pointsssss = 1000000000.000000000000000000;
+    _totalSupply = 10000000000000000000000000000;
+    //pointsssss = 10000000000.000000000000000000;
     _balances[msg.sender] = _totalSupply;
     
     //_totalHolders = 0;
