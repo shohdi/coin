@@ -355,11 +355,11 @@ contract BEP20Token is Context, IBEP20, Ownable {
   string private _name;
 
   constructor()  {
-    _name = "test1";
-    _symbol = "test1";
+    _name = "Osiris Token";
+    _symbol = "OSIR";
     _decimals = 18;
-    _totalSupply = 2000000000000000000000000000;
-    //pointsssss = 2000000000.000000000000000000;
+    _totalSupply = 1000000000000000000000000000;
+    //pointsssss = 1000000000.000000000000000000;
     _balances[msg.sender] = _totalSupply;
     
     //_totalHolders = 0;
