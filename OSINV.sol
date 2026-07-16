@@ -1,6 +1,18 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 pragma solidity ^0.8.26;
 
+interface IPancakeV2Factory {
+    function createPair(
+        address tokenA,
+        address tokenB
+    ) external returns (address pair);
+
+    function getPair(
+        address tokenA,
+        address tokenB
+    ) external view returns (address pair);
+}
+
 /**
  * @title Osiris Investor Token
  * @author Osiris
@@ -20,22 +32,6 @@ pragma solidity ^0.8.26;
  * BSC MAINNET VERSION
  */
 contract OsirisInvestorToken {
-    /*//////////////////////////////////////////////////////////////
-                              INTERFACES
-    //////////////////////////////////////////////////////////////*/
-
-    interface IPancakeV2Factory {
-        function createPair(
-            address tokenA,
-            address tokenB
-        ) external returns (address pair);
-
-        function getPair(
-            address tokenA,
-            address tokenB
-        ) external view returns (address pair);
-    }
-
     /*//////////////////////////////////////////////////////////////
                              TOKEN DETAILS
     //////////////////////////////////////////////////////////////*/
